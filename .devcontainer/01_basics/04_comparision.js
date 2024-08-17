@@ -8,4 +8,8 @@ console.log(null == 0);//=>false
 console.log(null>= 0);//=>true ...reason is that equality checking == and comparisons > >= < <= operators work differently..comparisons convert null to a number, treating it as 0 thats why 1 and 3 has suc outcomes
 
 
+console.log(undefined ==0)
+console.log(undefined >0)  
+console.log(undefined < 0) //no mater what comparison we use it reutrns a false
 
+//strict check ===
