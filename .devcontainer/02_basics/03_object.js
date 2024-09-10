@@ -31,9 +31,24 @@ console.log(Users[mySym]);
 
 jsUser.name = "Hari"
 console.log(jsUser.name);
-Object.freeze(jsUser)//freezes the object so no one can change the object
+//Object.freeze(jsUser)//freezes the object so no one can change the object
 jsUser.name = "Sanika"
 console.log(jsUser.name);
 console.log(jsUser);
 console.log(User);
 console.log(Users);
+
+
+jsUser.greeting = function(){
+    console.log("Hello js user")
+}
+
+console.log(jsUser.greeting);//[Function (anonymous)] i.e function return back..function ka reference aaya haifunction execute nhi hua hai 
+//console.log(jsUser.greeting());//not a function
+
+jsUser.greetingtwo = function(){
+    console.log(`Hello js user, ${this.name}`);
+}
+console.log(jsUser.greetingtwo());
+
+ 
