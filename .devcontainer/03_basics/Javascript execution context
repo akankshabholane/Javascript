@@ -1,0 +1,70 @@
+JavaScript is single-threaded, meaning it can only execute one task at a time in a single call stack. This characteristic is key to how JavaScript operates, especially when it comes to handling tasks like user input, network requests, or I/O operations.
+Javascript execution context means how javascript will run the file or execute the file.
+
+There are three types of execution contexts in JavaScript:-
+1.Global Execution Context:-This is the default execution context where code starts executing. It is created when the JavaScript engine                               first encounters the script.
+2.Function Execution Context:- Every time a function is called, a new execution context is created. Each function execution has its own                                   scope and set of variables, including arguments.
+
+3.Eval Execution Context:-If eval() is used, the code within eval() gets its own execution context.Generally, using eval() is discouraged                           for performance and security reasons
+
+JavaScript code is executed in two phases:-
+1. Memory Creation Phase(Creation Phase)
+2. Execution Phase
+
+MEMORY CREATION PHASE:-
+Variables declared using var are hoisted to the top of their scope, but only the declaration is hoisted, not the initialization. The variables are initialized with undefined.
+Functions (declared with function) are fully hoisted, meaning both the function declaration and definition are available before the execution begins.
+
+EXECUTION PHASE:-
+Variable Initialization:
+    Variables declared with var are assigned their values (if initialized), and variables declared with let and const are initialized (if     applicable) but not hoisted.
+Function Invocation:
+    Functions are invoked as they are encountered.
+Code Execution:
+    The actual execution of statements and expressions happens in this phase. Any runtime errors, such as reference errors or syntax 
+    errors, are caught during this phase.
+
+Let's take this code snippet:-
+
+let val1 = 10
+lett val2 = 5
+function addNum(num1, num2){
+    let total = num1 + num2
+    return total
+}
+let result1 = addNum(val1, val2)
+let result2 = addNum(10,2)
+-----------------------------
+1.Code is first ran through global Execution first ans is allocated in this
+2.Memory creation phase;- all variables are collected and all of them are kept.
+    val1 --> undefined
+    val2 --> undefined
+    addnum--> definition of funciton
+    result1 --> undefined
+    result2--> undefined
+3.Execution Phase
+    a)val1--> 10
+    b)val2--> 5
+    c)addNum--> creates its own seperate executin context-> called as New Executional Context.Due to the presence of this box memory and                   execution phase are executed again for the funcion addNum. as many times you write the function that times this                           happens.every function-> crate sandbox and do memory and execution phase---|                        
+    d)result1 = 15                                                                          |
+    e)result2 =  New Executional Context created and same will happenn here.                |
+                                                          __________________________ <------|
+                                                          | New variable environm  |
+                                                          |         +              |
+                                                          | Execution thread       |
+                                                          | _______________________|
+                                                               |  (this new execution context is deleted after its work is over )
+                                                               |
+_______________________________________________________________|
+|                                      |
+|                                      |                                          
+Memory phase:-                     Execution context
+val1 --> undefined                 num1 = 10
+val2 --> undefined                 num2 = 5
+total --> undefined                total = 15(total is returned to global execution context)
+
+
+                                                          
+                                                      
+
+                                                          
