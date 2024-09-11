@@ -50,3 +50,49 @@ loginuserMessage("Anushka")
 console.log(loginuserMessage("Akanksha"));
 
 console.log(loginuserMessage());//if no value given then god which is default that will be displayed
+
+function calculateCcartPrice(...num1){
+    console.log(num1);
+    
+}
+calculateCcartPrice(3,4,5,6)//when we pass many arguments we use rest operator i.e.  ...num1 to tell that it can take multiple arguments
+function calculateCartPrice(val1, val2, ...num1){//inerview
+    return num1
+}
+
+console.log(calculateCartPrice(200,300,4000,5000,9000))
+
+//passing object to the function
+const user = {
+    username: "Anushka",
+    price: 299
+}
+
+function handleObject(anyobject) {
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+handleObject(user)
+//if we do price instead of prices in ${anyobject.price} then it will show undefined
+const users = {
+    username: "Anushka",
+    prices: 299
+}
+function handleObjects(anyobject) {
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+handleObjects(users)
+handleObject({
+    username: "Hari",
+    price: 5999
+})//we can also pass direct object
+
+
+//array
+const arr= [123,234,345]
+function retrunArray (getArray){
+    return getArray[1]
+}
+//console.log(retrunArray(arr));
+console.log(retrunArray([1234,2345,3456,4567,5678]));
+
