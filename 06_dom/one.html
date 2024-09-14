@@ -14,10 +14,22 @@
     <div>
         <h1 class="heading"> DOM learning on Chai aur code</h1>
         <p>Lorem ipsum dolor sit amet.</p>
+         <input type="password" name="" id="">
+
     </div>
     
 </body>
 </html>
+
+
+<!-- difference between innerText and textContent 
+ if any content is hidden because of any css property it is also displayed using textContent
+ inner html main text k andar agar html tag ho woh bhi deta hai-->
+
+<!-- queryselecto(h1)r=> first h1 dega  -->
+<!-- 
+document.querySelector('input[type ="password"]')
+<input type=​"password" name id>​ -->
 
 
 <!-- <!DOCTYPE html>
@@ -50,3 +62,68 @@
                                             attribute \     textnode 
                                                        \
                                                     textnode -->
+
+
+                                                    <!-- document.getElementById("highlight-mengshou-style")
+                                                    <style id=​"highlight-mengshou-style">​    .highlight-mengshou-wrap {
+                                                            background: #ff9;
+                                                            cursor: pointer;
+                                                        }
+                                                        .highlight-mengshou-wrap.active {
+                                                            background: #ffb;
+                                                        }</style>​
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").id
+                                                    'highlight-mengshou-style'
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").class
+                                                    undefined
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").className
+                                                    ''
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").getAttribute
+                                                    ƒ getAttribute() { [native code] }
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").getAttribute(id)
+                                                    VM293:1 Uncaught ReferenceError: id is not defined
+                                                        at <anonymous>:1:66
+                                                    (anonymous) @ VM293:1Understand this error
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").getAttribute('id')
+                                                    'highlight-mengshou-style'
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").getAttribute('class')
+                                                    null
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").setAttribute('class', 'text')
+                                                    undefined
+                                                    
+                                                    document.getElementById("highlight-mengshou-style").setAttribute('class', 'text previousClassName')
+                                                    undefined
+                                                    
+                                                    const title = document.getElementById("highlight-mengshou-style")
+                                                    undefined
+                                                    
+                                                    title
+                                                    <style id=​"highlight-mengshou-style" class=​"text previousClassName">​…​</style>​
+                                                    title.style.backgroundColor= "Pink"
+                                                    'Pink'
+                                                    
+                                                    title.style.backgroundColor= "pink"
+                                                    'pink'
+                                                    
+                                                    title.style.backgroundColor = "green"
+                                                    'green'
+                                                    
+                                                    title.style.padding = "20px"
+                                                    '20px'
+
+                                                    title.textContent
+'\n    .highlight-mengshou-wrap {\n        background: #ff9;\n        cursor: pointer;\n    }\n    .highlight-mengshou-wrap.active {\n        background: #ffb;\n    }\n'
+
+title.innerHTML
+'\n    .highlight-mengshou-wrap {\n        background: #ff9;\n        cursor: pointer;\n    }\n    .highlight-mengshou-wrap.active {\n        background: #ffb;\n    }\n'
+
+title.innerText
+'\n    .highlight-mengshou-wrap {\n        background: #ff9;\n        cursor: pointer;\n    }\n    .highlight-mengshou-wrap.active {\n        background: #ffb;\n    }\n' -->
