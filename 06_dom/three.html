@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+
+    
+</body>
+<script>
+    const div = document.createElement("div")
+    console.log(div);
+    div.id= "123"
+    div.className = "DivElement"
+    div.setAttribute("title" , "ThisIsTitle")//recheck it on chrome..this will not override the initial values..yaha ek round trio bachta hai as ye values lekr ane k bad set nhi krta usko direct set krta hai
+    div.style.backgroundColor= "green"
+    div.style.padding = "10px"
+    //div.innerText = "Chai Aur Code"//if we set values using this method it will override the initail class name
+    // we can see it in console but not on page because it is memory right now. To make it visible we have to make it attach to the page
+    const addText = document.createTextNode("Chai Aur Code")
+    div.appendChild(addText)//it is also taking extra trip but why still it is prefered?
+
+    //attaching
+    document.body.appendChild(div)
+
+    
+
+    
+</script>
+</html>
