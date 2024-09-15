@@ -17,6 +17,12 @@
          <input type="password" name="" id="">
 
     </div>
+    <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+    </ul>
     
 </body>
 </html>
@@ -26,11 +32,12 @@
  if any content is hidden because of any css property it is also displayed using textContent
  inner html main text k andar agar html tag ho woh bhi deta hai-->
 
-<!-- queryselecto(h1)r=> first h1 dega  -->
+<!-- queryselecto(h1)r=> first h1 dega...The Document method querySelector() returns the first Element within the document that matches the specified CSS selector, or group of CSS selectors. If no matches are found, null is returned. -->
+<!-- The Document method querySelectorAll() returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors. -->
 <!-- 
 document.querySelector('input[type ="password"]')
 <input type=​"password" name id>​ -->
-
+<!-- NodeList can be converted into the array to use map functionlality -->
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -127,3 +134,123 @@ title.innerHTML
 
 title.innerText
 '\n    .highlight-mengshou-wrap {\n        background: #ff9;\n        cursor: pointer;\n    }\n    .highlight-mengshou-wrap.active {\n        background: #ffb;\n    }\n' -->
+
+
+
+<!-- 
+const tempLiList = document.querySelectorAll("li")
+undefined
+const tempLliList = document.querySelectorAll("li")
+undefined
+document.querySelectorAll("li")
+NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+const TempListLi = document.querySelectorAll("li")
+undefined
+TempListLi
+NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+TempListLi.style.color = "green"
+VM532:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:24
+(anonymous) @ VM532:1Understand this error
+TempListLi[0].style.color = "green"
+'green'
+TempListLi[2].style.color = "green"
+'green'
+myH1 = document.querySelectorAll("h1")
+NodeList [h1.heading]
+myH1.style.color = "blue"
+VM675:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:18
+(anonymous) @ VM675:1Understand this error
+myH1[0].style.color = "blue"
+'blue'
+tempLiList.forEach( (l)=>{
+    l.style.color = "pink"
+} )
+undefined -->
+
+<!-- document.getElementsByClassName("List-item")
+HTMLCollection []length: 0[[Prototype]]: HTMLCollection
+document.getElementsByClassName("list-item")
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+const tempClassList = document.getElementsByClassName("list-item")
+undefined
+tempClassList.forEach( (li)=>{
+    console.log(li)
+} )
+VM999:1 Uncaught TypeError: tempClassList.forEach is not a function
+    at <anonymous>:1:15
+(anonymous) @ VM999:1Understand this error
+// converting htmlCollection to arrray
+undefined
+Array.from(tempClassList)
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toReversed: ƒ toReversed()toSorted: ƒ toSorted()toSpliced: ƒ toSpliced()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()with: ƒ with()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
+const convertedtoarray = Array.from(tempClassList)
+undefined
+convertedtoarray
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+convertedtoarray.forEach( (li)=>{
+    li.style.backgroundColor = "orange"
+} )
+undefined -->
+
+<!-- document.querySelectorAll("h2")
+NodeList(8) [h2.vector-pinnable-header-label, h2#Use, h2#Syntax, h2#Examples, h2#Differences_between_Java_and_Javascript, h2#Related_pages, h2#References, h2#Other_websites]
+const allh2 = document.querySelectorAll("h2")
+undefined
+allh2[0].innerHTML
+'Contents'
+allh2[7].innerHTML
+'Other websites'
+const allh2 = document.querySelectorAll(".mw-heading mw-heading2")
+undefined
+document.querySelectorAll(".mw-heading mw-heading2")
+NodeList []length: 0[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+document.querySelectorAll(".mw-heading")
+NodeList(10) [div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2]0: div.mw-heading.mw-heading21: div.mw-heading.mw-heading32: div.mw-heading.mw-heading33: div.mw-heading.mw-heading34: div.mw-heading.mw-heading25: div.mw-heading.mw-heading26: div.mw-heading.mw-heading27: div.mw-heading.mw-heading28: div.mw-heading.mw-heading29: div.mw-heading.mw-heading2length: 10[[Prototype]]: NodeList
+const myh2 = document.querySelectorAll(".mw-heading")
+undefined
+myh2
+NodeList(10) [div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2]
+myh2.innerHTML
+undefined
+myh2[0].innerHTML
+`<h2 id="Use">Use</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=JavaScript&amp;veaction=edit&amp;section=1" title="Change section: Use" class="mw-editsection-visualeditor"><span>change</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=JavaScript&amp;action=edit&amp;section=1" title="Edit section's source code: Use"><span>change source</span></a><span class="mw-editsection-bracket">]</span></span>`
+myh2.forEach( (l) =>{
+    l.style.color = "green"
+} )
+undefined
+myh2[0].innerText
+'Use[change | change source]'
+myh2.forEach( (l)=>{
+    l.style.color = "green"
+} )
+undefined
+myh2.forEach( (l)=>{
+    l.style.color = "orange"
+} )
+undefined
+myh2.forEach( (l)=>{
+    l.style.color = "orange"
+} )
+undefined
+myh2.forEach( (l)=>{
+    l.style.color = "orange"
+    l.style.backgroundColor = "yellow"
+    l.style.padding = "30px"
+} )
+undefined
+myh2.forEach( (l)=>{
+    l.style.color = "orange"
+    l.style.backgroundColor = "yellow"
+    l.style.padding = "30px"
+    l.style.innerText = "AkankshaHari"
+} )
+undefined
+myh2.forEach( (l)=>{
+    l.style.color = "orange"
+    l.style.backgroundColor = "yellow"
+    l.style.padding = "30px"
+    l.innerText = "AkankshaHari"
+} )
+undefined -->
