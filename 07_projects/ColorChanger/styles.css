@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white; /* Default background color */
+  }
+  
+
+h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    gap: 20px;
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* Add the colors directly in the boxes */
+  .box:nth-child(1) { background-color: #ff6347; } /* Tomato */
+  .box:nth-child(2) { background-color: #4682b4; } /* Steel Blue */
+  .box:nth-child(3) { background-color: #32cd32; } /* Lime Green */
+  .box:nth-child(4) { background-color: #ff69b4; } /* Hot Pink */
+  .box:nth-child(5) { background-color: #ff8c00; } /* Dark Orange */
+  
+  .box:hover {
+    transform: scale(1.1);
+  }
+  
