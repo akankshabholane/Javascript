@@ -20,8 +20,65 @@
    </div>
 </body>
     <script>
-        document.getElementById("owl").onclick = function(){
-            alert("Owl clicked")
-        }
+        // document.getElementById("owl").onclick = function(){
+        //     alert("Owl clicked")//onclick doesnt provide a lot of features
+        // }
+
+        //attachEvent()
+        //jQuery - on
+
+        //type(keyboard type event, mouse event), timestamp, defaultPrevented
+        //target, toElement, srcElement, currentTarget
+        //clientX, clientY, screenX, screenY
+        //altkey,ctrlkey, shiftKey, keycode
+
+
+        // document.getElementById("owl").addEventListener('click', function(){
+        //     alert("owl clicked")//best approach
+        // })//it has third value also..INTERVIEW
+        // document.getElementById("owl").addEventListener('click', function(e){
+        //     console.log(e);//this e is event object    
+        // },false)
+        // Event Propagation determines in which order the elements receive the event. There are two ways to handle this event propagation order of HTML DOM is Event Bubbling and Event Capturing.
+        //Event Bubbling:-When an event happens on a component, it first runs the event handler on it, then on its parent component, then all the way up on other ancestors’ components. By default, all event handles through this order from center component event to outermost component event.
+        //Event Capturing.:-It is the opposite of bubbling. The event handler is first on its parent component and then on the component where it was actually wanted to fire that event handler. In short, it means that the event is first captured by the outermost element and propagated to the inner elements. It is also called trickle down.
+        
+        // document.getElementById("images").addEventListener("click", function(e){
+        //     console.log("clicked inside ul")
+        // }, true)//true for capturing ..by default it is false
+
+        // document.getElementById("owl").addEventListener('click',function(e){
+        //     console.log("clicked on owl");
+        // },true)
+        // document.getElementById("images").addEventListener("click", function(e){
+        //     console.log("clicked inside ul")
+        // }, false)//true for capturing ..by default it is false
+
+        // document.getElementById("owl").addEventListener('click',function(e){
+        //     console.log("clicked on owl");
+        //     e.stopPropagation()//event bubble hokar age nahi jaega
+        // },false)
+
+        // //we want that google pr click -> not to go to the website
+        // document.getElementById("google").addEventListener("click", function(e){
+        //     e.preventDefault()
+        //     e.stopPropagation()
+        //     console.log("google clicked");  
+        // })
+        //one one click i want to make images disappear
+        document.getElementById("images").addEventListener("click", function(e){
+            // console.log(e.target.parentNode);
+            // let removeIt = e.target.parentNode//here if we click on li sabh kuch remove hota hai. even if we click near google same thing happens
+            // removeIt.remove()
+            // //OR
+            // //removeIt.parentNode.removeChild(removeIt)
+            console.log(e.target.tagName);
+            if(e.target.tagName === "IMG"){
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+            
+        })
+
     </script>
 </html>
