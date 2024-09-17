@@ -1,4 +1,5 @@
-Default Javascript is SYNCHRONOUS and SINGLE THREADED
+Default Javascript (engine) is SYNCHRONOUS and SINGLE THREADED
+complete runtime of javascript is asynchronous
 Exexcution Context :-
                     Executes onen linen of code at a Time. Each line of code is executed line by line.
                     Each operation waits for the last one to complete before execution
