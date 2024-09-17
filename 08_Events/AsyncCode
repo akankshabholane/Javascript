@@ -1,0 +1,39 @@
+Default Javascript is SYNCHRONOUS and SINGLE THREADED
+Exexcution Context :-
+                    Executes onen linen of code at a Time. Each line of code is executed line by line.
+                    Each operation waits for the last one to complete before execution
+
+BLOCKING CODE vs NON BLOCKING CODE
+     |                      \
+Block the flow         Does not block execution
+of the program
+
+
+
+
+    JS ENGINE                                                           Web Api(found in browser)
+__________________________________                                  _______________________________
+|                                |                                  | Dom Api                      |
+|  Memory            Call Stack  |      |-------------------------->|set timeout------------|      | 
+|  heap                          |      |                           |set interval           |      | 
+|   ______            _______|---|------|                           |fetch()-----           |      | 
+|  |      |          |       |   |                                  |            |          |      | 
+|  |      |          | fn1   |   |                                  |       Promises     Register  |
+|  |      |          | fn2   |   |                                  |            |       call back |
+|  |______|          |Global |   |                                  |____________|__________|______|
+|                    |_______|   |                                               |          |
+|                         | /|\  |                                  ____________\|/___      |
+|_________________________|__|___|     High priority               |                  |     |
+                          |  |_____________________________________|    CB CB         |     |
+                          |                                        |__________________|     |_______
+                          |                                                                         |
+                          |                                         ___________________________     |
+                          |<________________________________________|                          |    |
+                                Add to call stack                   |    ____     ____         |    |
+                                                                    |   | CB |   | CB |        |<___|
+                                                                    |   |____|   |____|        |
+                                                                    |__________________________|
+                                                                                Task queue(makes js fast and asynchronous)
+
+Promises ahs a different queue called promis queue or high priority queue
+if fn1 calls settimeout. it will be found in webb api. this call is now transfered to web api. now regeitser call back ko bataya jata hai ki ye kam krna hai time out hone k bad.register call back sare events ko register krta hai events like click,load, hover etc. regitser call back then add it to task queue and then each tsk is sent to the call stack again. even if we call set timeout for 0 second it will still go through this process and until it happens next line is printed.. fetch se jo bhi promise queue banti hai woh bhi same kam krti only difference is that it is a bit high priority

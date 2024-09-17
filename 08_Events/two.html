@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- INTERVIEW:- CLEARINTERVAL, CLEARTIMEOUT -->
+    <h1>Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const akanksha = function() {
+        console.log("Akanksha");
+    }
+    setTimeout(akanksha, 2000);//only give reference
+    // setTimeout(function(){
+    //     console.log("Akanksha");
+    // }, 2000);
+    // setTimeout(() => {
+    //     console.log("Akanksha");  
+    // }, 2000);// runs only once after specified time
+    const changeText = function(){
+        document.querySelector("h1").innerHTML = "Best JS Series"
+    }
+    const changeName = setTimeout(changeText, 2000)
+    document.querySelector("#stop").addEventListener("click",function(){
+        clearTimeout(changeName)
+        console.log("Stopped");
+    })
+    
+</script>
+</html>
