@@ -39,6 +39,10 @@ function Users(username, loginCount, isLoggedIn){
     this.loginCount = loginCount;
     this.isLoggedIn =isLoggedIn;
 
+    this.greeting = function(){ 
+        console.log(`Welcome ${this.username}`)
+    } // methods can also be written
+
     return this;// woh jo object tha usko pass on kiya.. return likhe ya na likhe farak nahi padta as it is implicitly defined.. by default waha hoga he
     
 }
@@ -49,8 +53,9 @@ function Users(username, loginCount, isLoggedIn){
 
 const userOne = new Users("Akanksha", 8, true);
 const userTwo = new Users("Anushka", 3, false);
-console.log(userOne);
-console.log(userTwo);
+//console.log(userOne);
+console.log(userOne.constructor);// constructor property here is?
+//console.log(userTwo);
 // constructor function hamesha naya instance deta hai
 
 //new--
@@ -58,3 +63,7 @@ console.log(userTwo);
 // contructor function ccall hota hai new keyword k karan ..constructor function packs all the arguments hai woh usmein pack krta hai aur apko de deta hai( step2)
 // this keyword injects the argument in the variable(step 3)
 // argumetns function k andar mil jate hai (step 4)
+
+//instanceof in js
+//In JavaScript, the instanceof operator is used to check if an object is an instance of a specific class or constructor function. It returns a boolean value (true or false). 
+
