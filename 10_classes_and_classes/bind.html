@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement-- jaise he ye page load ho apka ek object create ho jaye react ka. jabh ye kam ho jaye  toh jo ye button hai is ka mujhe reference mil jaye aur ek method ho jo ho handle click ka jo form submit aise kuch messgae de
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this)) //
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
+
+<!-- 
+When the button is clicked, handleClick is called as a callback function. In JavaScript, when a method is passed like this:
+
+
+this.handleClick
+It loses its context—this no longer refers to the instance of the React class. Instead, it may become undefined or refer to the button element, depending on how it's called.
+
+✅ What .bind(this) does:
+.bind(this) locks the value of this inside handleClick to always refer to the current class instance (React), even when it’s used as a callback. -->
