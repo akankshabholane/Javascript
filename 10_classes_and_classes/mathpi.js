@@ -4,7 +4,8 @@ const descripter = Object.getOwnPropertyDescriptor(Math, "PI")
 
 // console.log(Math.PI);
 // Math.PI = 5
-// console.log(Math.PI);
+// console.log(Math.PI); right now this value is not able to edit but it can be done 
+
 
 const chai = {
     name: 'ginger chai',
@@ -20,3 +21,10 @@ console.log(Object.getOwnPropertyDescriptor(chai, "name")); //output---->{
 //   enumerable: true,
 //   configurable: true
 //}
+
+Object.defineProperty(chai, "name",{
+    writable: false,
+  enumerable: false
+})              //what it is? where can be used? and where it cant?
+
+console.log(Object.getOwnPropertyDescriptor(chai, "name"));
