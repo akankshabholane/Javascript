@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function init() {
+        //     var name = "Mozilla"; 
+        //     function displayName() {
+        //     console.log(name); 
+        //     }
+            
+        //     displayName();
+        // }
+        //     init();
+
+        // function outer(){
+        //     let usersname ="akanksha"  // chote bade se mang sakte hai pr bade chotose nahi mang sakte
+        //     console.log(secret);
+            
+        //     function inner(){
+        //         let secret = 123;
+        //         console.log("INNER",usersname);
+                
+        //     }
+        //     function innerTwo(){
+        //         console.log("INNER",usersname);
+        //         console.log(secret); // bhai bhai bhi aapas main nahi mang sakte
+                
+                
+        //     }
+        //     inner()
+        //     innerTwo()
+        // }
+        // outer()
+        // console.log("TOO OUTER" , usersname);
+//----------------------------------------------------------------------
+        function makeFunc() {
+            const name = "Mozilla";
+            function displayName() {
+                console.log(name);
+            }
+            return displayName;  // yaha aap pura ka pura function return kre ho, th buss function nahi return hota pr uska pura lexical scope return hota hai interview mainlexical scope bolna mat bhulna
+        }
+
+        const myFunc = makeFunc();
+        myFunc();
+
+
+
+    </script>
+    <script>
+        //practical implimentation of closure(asked in interview)
+    </script>
+</body>
+</html>
